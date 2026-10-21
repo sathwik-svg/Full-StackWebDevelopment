@@ -1,7 +1,21 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "formflow",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Interactive form builder with an embeddable chatbot widget. Create conversational forms, embed them on any website, and collect responses in a dashboard.",
+  "license": "MIT",
+  "keywords": [
+    "form-builder",
+    "chatbot",
+    "conversational-forms",
+    "react",
+    "typescript",
+    "supabase",
+    "tailwindcss",
+    "vite",
+    "widget",
+    "embeddable"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
