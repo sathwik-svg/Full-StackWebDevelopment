@@ -1,4 +1,5 @@
 import { useRoute } from '@/lib/router';
+import { AuthProvider } from '@/lib/auth';
 import { Navbar, Footer } from '@/components/Navbar';
 import { LandingPage } from '@/pages/LandingPage';
 import { DashboardPage } from '@/pages/DashboardPage';
@@ -7,25 +8,32 @@ import { ResponsesPage } from '@/pages/ResponsesPage';
 import { PublicFormPage } from '@/pages/PublicFormPage';
 import { EmbedDemoPage } from '@/pages/EmbedDemoPage';
 
-function App() {
+function AppContent() {
   const route = useRoute();
-
   const showChrome = route.name !== 'public';
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
-      {showChrome && <Navbar />}
-      <main>
-        {route.name === 'home' && <LandingPage />}
-        {route.name === 'dashboard' && <DashboardPage />}
-        {route.name === 'builder' && <FormBuilderPage formId={route.formId} />}
-        {route.name === 'responses' && <ResponsesPage formId={route.formId} />}
-        {route.name === 'public' && <PublicFormPage slug={route.slug} />}
-        {route.name === 'embed-demo' && <EmbedDemoPage formId={route.formId} />}
-      </main>
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col justify-between">
+      <div>
+        {showChrome && <Navbar />}
+        <main>
+          {route.name === 'home' && <LandingPage />}
+          {route.name === 'dashboard' && <DashboardPage />}
+          {route.name === 'builder' && <FormBuilderPage formId={route.formId} />}
+          {route.name === 'responses' && <ResponsesPage formId={route.formId} />}
+          {route.name === 'public' && <PublicFormPage slug={route.slug} />}
+          {route.name === 'embed-demo' && <EmbedDemoPage formId={route.formId} />}
+        </main>
+      </div>
       {showChrome && <Footer />}
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
+  );
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Formflow",
+  "description": "Interactive conversational form builder with embeddable chatbot widget, advanced question types, validation, templates, analytics, CSV export, webhooks, and secure RBAC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
