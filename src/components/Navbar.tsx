@@ -69,6 +69,7 @@ export function Navbar() {
                 <a href="#features" className="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition">Features</a>
                 <a href="#how" className="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition">How it works</a>
                 <a href="#demo" className="px-3 py-2 text-sm font-medium text-white/80 hover:text-white transition">Demo</a>
+                <a href="/Formflow_User_Manual.pdf" target="_blank" rel="noopener noreferrer" className="px-3 py-2 text-sm font-medium text-emerald-300 hover:text-emerald-100 transition">Manual (PDF)</a>
               </>
             ) : (
               <>
@@ -94,6 +95,15 @@ export function Navbar() {
                   <Shield className="h-4 w-4 text-slate-500" />
                   Security & Audit
                 </button>
+                <a
+                  href="/Formflow_User_Manual.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-sm font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-lg transition flex items-center gap-1.5 border border-emerald-200 shadow-2xs"
+                  title="Download Formflow User Manual (12-Page PDF)"
+                >
+                  <span>Manual (PDF)</span>
+                </a>
               </>
             )}
 
@@ -185,6 +195,14 @@ export function Navbar() {
             >
               Security Audit & Logs
             </button>
+            <a
+              href="/Formflow_User_Manual.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-left px-3 py-2 text-sm font-bold text-emerald-700 bg-emerald-50 rounded-lg hover:bg-emerald-100"
+            >
+              📖 Download User Manual (PDF)
+            </a>
             <div className="pt-2 border-t border-slate-100 flex items-center justify-between px-3">
               <span className="text-xs text-slate-500">Active Role:</span>
               <div className="flex gap-1.5">
