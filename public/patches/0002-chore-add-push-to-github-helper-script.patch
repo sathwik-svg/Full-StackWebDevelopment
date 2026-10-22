@@ -1,0 +1,51 @@
+From 6fab6644d0db51d328e3947aa249f2f73416e24b Mon Sep 17 00:00:00 2001
+From: Sathwik <ganjisathwik73@gmail.com>
+Date: Thu, 22 Oct 2026 10:32:18 +0000
+Subject: [PATCH 2/3] chore: add push-to-github helper script
+
+---
+ scripts/push-to-github.sh | 32 ++++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
+ create mode 100755 scripts/push-to-github.sh
+
+diff --git a/scripts/push-to-github.sh b/scripts/push-to-github.sh
+new file mode 100755
+index 0000000..d6bdb1f
+--- /dev/null
++++ b/scripts/push-to-github.sh
+@@ -0,0 +1,32 @@
++#!/usr/bin/env bash
++# Push Task 2 branch to GitHub repository: https://github.com/sathwik-svg/Full-StackWebDevelopment
++
++set -e
++
++BRANCH_NAME="${1:-task2}"
++REMOTE_REPO="https://github.com/sathwik-svg/Full-StackWebDevelopment.git"
++
++echo "=== Formflow Task 2 GitHub Push Helper ==="
++echo "Target repository: $REMOTE_REPO"
++echo "Target branch:     $BRANCH_NAME"
++echo ""
++
++if [ -n "$GITHUB_TOKEN" ]; then
++  echo "Found GITHUB_TOKEN environment variable. Pushing securely..."
++  git push "https://${GITHUB_TOKEN}@github.com/sathwik-svg/Full-StackWebDevelopment.git" "task2:${BRANCH_NAME}"
++  echo "✓ Successfully pushed Task 2 to ${REMOTE_REPO} branch ${BRANCH_NAME}!"
++else
++  echo "No GITHUB_TOKEN detected in environment."
++  echo "Run one of the following commands in your terminal to push:"
++  echo ""
++  echo "Option 1 (Using Git CLI / SSH):"
++  echo "  git push origin task2"
++  echo ""
++  echo "Option 2 (Using GitHub Personal Access Token):"
++  echo "  git push https://<YOUR_PERSONAL_ACCESS_TOKEN>@github.com/sathwik-svg/Full-StackWebDevelopment.git task2"
++  echo ""
++  echo "Option 3 (Merge task2 directly into main):"
++  echo "  git checkout main"
++  echo "  git merge task2"
++  echo "  git push origin main"
++fi
+-- 
+2.34.1
+
